@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Hexagon from '../Shapes/Hexagon ';
+import { formatTimestamp } from '../../utils/formatTimestamp';
 
 const Assets = ({ data, filter }) => {
    const filteredAssets = filter ? data.assets.filter(asset => asset.type === filter) : data.assets;
@@ -27,9 +28,9 @@ const Assets = ({ data, filter }) => {
                            </span>
                         </div>
                      </td>
-                     <td>{asset.name}</td>
-                     <td>{asset.total_vuls}</td>
-                     <td className="rounded-r-xl pr-4">{asset.lastSeen}</td>
+                     <td className='font-normal'>{asset.name}</td>
+                     <td className='font-normal'>{asset.total_vuls}</td>
+                     <td className="rounded-r-xl pr-4 font-normal">{formatTimestamp(asset.lastSeen)}</td>
                   </tr>
                ))}
             </tbody>

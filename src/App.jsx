@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="p-4 space-y-8">
+    <div className="m-4 lg:m-8 space-y-8">
       <Cards data={data} onFilterChange={handleFilterChange} />
       <Assets data={data} filter={filter} />
     </div>

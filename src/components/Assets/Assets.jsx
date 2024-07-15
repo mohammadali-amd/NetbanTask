@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import Hexagon from '../Shapes/Hexagon ';
 
 const Assets = ({ data, filter }) => {
    const filteredAssets = filter ? data.assets.filter(asset => asset.type === filter) : data.assets;
 
    return (
-      <div className="bg-gray-900 rounded-xl text-white p-4 font-bold">
+      <div className="overflow-auto bg-gray-900 rounded-xl text-white p-4 font-bold">
          <h2 className="text-lg pb-6">Assets</h2>
          <table className="min-w-full border-separate border-spacing-y-2 rounded-xl">
             <thead className="bg-gray-700 rounded-xl">
@@ -19,17 +20,16 @@ const Assets = ({ data, filter }) => {
                {filteredAssets.map((asset) => (
                   <tr key={asset.name} className="bg-gray-800 my-5 rounded-xl">
                      <td className="pl-5 py-3 rounded-l-xl">
-                        <div className="flex items-center">
-                           <div>
-                              <span className={`inline-flex items-center justify-center h-10 w-10 rounded-full bg-${asset.grade === 'F' ? 'red-700' : 'red-500'} text-white`}>
-                                 {asset.grade}
-                              </span>
-                           </div>
+                        <div className="relative flex items-center justify-center w-10 h-10">
+                           <Hexagon fillColor={asset.grade === 'F' ? '#68190b' : '#7c0724'} />
+                           <span className="absolute text-black font-bold">
+                              {asset.grade}
+                           </span>
                         </div>
                      </td>
                      <td>{asset.name}</td>
                      <td>{asset.total_vuls}</td>
-                     <td className="rounded-r-xl">{asset.lastSeen}</td>
+                     <td className="rounded-r-xl pr-4">{asset.lastSeen}</td>
                   </tr>
                ))}
             </tbody>

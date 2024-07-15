@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import Card from '../Card/Card'
+import Card from './Card/Card'
 import { EarthPlanet, UploadToCloud } from '../../../public/icons';
 
 const Cards = ({ data, onFilterChange }) => {
@@ -28,7 +28,7 @@ const Cards = ({ data, onFilterChange }) => {
       },
    ];
    return (
-      <div className='flex gap-8'>
+      <div className='lg:flex gap-8'>
          {cardData.map((card, index) => (
             <Card
                key={index}

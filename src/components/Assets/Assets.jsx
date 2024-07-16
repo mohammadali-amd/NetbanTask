@@ -11,16 +11,16 @@ const Assets = ({ data, filter }) => {
          <table className="min-w-full border-separate border-spacing-y-2 rounded-xl">
             <thead className="bg-gray-700 rounded-xl">
                <tr className="rounded-xl text-left">
-                  <th className="pl-5 py-3 rounded-l-xl">Grade</th>
-                  <th className="py-3">Name</th>
-                  <th className="py-3">Total Vulnerabilities</th>
-                  <th className="py-3 rounded-r-xl">Last Seen</th>
+                  <th className="pl-5 py-2 rounded-l-md">Grade</th>
+                  <th>Name</th>
+                  <th className='text-center'>Total Vulnerabilities</th>
+                  <th className=" rounded-r-md text-center">Last Seen</th>
                </tr>
             </thead>
             <tbody>
                {filteredAssets.map((asset) => (
-                  <tr key={asset.name} className="bg-gray-800 my-5 rounded-xl">
-                     <td className="pl-5 py-3 rounded-l-xl">
+                  <tr key={asset.name} className="bg-gray-800">
+                     <td className="pl-5 py-2 rounded-l-md">
                         <div className="relative flex items-center justify-center w-10 h-10">
                            <Hexagon fillColor={asset.grade === 'F' ? '#68190b' : '#7c0724'} />
                            <span className="absolute text-black font-bold">
@@ -29,8 +29,8 @@ const Assets = ({ data, filter }) => {
                         </div>
                      </td>
                      <td className='font-normal'>{asset.name}</td>
-                     <td className='font-normal'>{asset.total_vuls}</td>
-                     <td className="rounded-r-xl pr-4 font-normal">{formatTimestamp(asset.lastSeen)}</td>
+                     <td className='font-normal text-center'>{asset.total_vuls}</td>
+                     <td className="rounded-r-md pr-4 md:pr-0 font-normal text-center">{formatTimestamp(asset.lastSeen)}</td>
                   </tr>
                ))}
             </tbody>

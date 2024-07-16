@@ -32,23 +32,22 @@ const BarChart = ({ data }) => {
       scales: {
          x: {
             display: false,
+            grid: { display: false },
+            barPercentage: 0.5,
+            categoryPercentage: 0.5,
          },
          y: {
             display: false,
+            grid: { display: false },
          },
       },
       layout: {
-         padding: {
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-         },
+         padding: 0
       },
    };
 
    return (
-      <div style={{ width: '100px', height: '50px' }}>
+      <div style={{ width: '50px', height: '40px' }}>
          <Bar data={chartData} options={options} />
       </div>
    )

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-import { Bug, Conflict, DownLeftArrow, Globe } from "../../../../public/icons"
-import Chart from '../../Chart/Chart';
+import { Bug, Conflict, DownLeftArrow, Globe } from "../../../public/icons"
+import Chart from '../Chart/BarChart';
 
 const Card = ({ title, totalMonitored, monitored, totalLive, live, ips, vulns, ports, total, bgColor, mainIcon, onClick }) => {
    const items = [
